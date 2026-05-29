@@ -1,138 +1,282 @@
-# Smart Credit Card Recommendation System
+# Memory Lane 📸🧠
 
-> A Final Year Project by **Balamurugan T**
+An AI-powered personal memory management platform that helps users store, organize, search, and relive their memories through semantic search and conversational AI.
 
-## 📌 Overview
+## 🚀 Overview
 
-The **Smart Credit Card Recommendation System** is a full-stack intelligent application designed to analyze users' spending behavior and recommend the most suitable credit cards based on their financial habits.
+Memory Lane is a smart digital memory vault where users can upload photos, videos, journals, and other personal content. Using AI-powered embeddings, semantic search, and Retrieval-Augmented Generation (RAG), users can search memories using natural language and interact with their memories through a conversational assistant.
 
-This project combines the power of:
+### Example Queries
 
-* **Python** for data analysis and recommendation logic
-* **Java** for backend processing and system integration
-* **Frontend Technologies** for an interactive and user-friendly interface
-
-The application works as a complete ecosystem where all components communicate together to provide personalized financial recommendations.
-
----
-
-## 🚀 Problem Statement
-
-Choosing the right credit card can be difficult because different cards provide different benefits such as:
-
-* Cashback
-* Reward points
-* Travel benefits
-* Shopping offers
-* Fuel discounts
-
-Most users are unaware of which card best fits their spending pattern. This project solves that problem by analyzing user transaction data and intelligently recommending the best credit cards.
-
----
-
-## 🎯 Objectives
-
-* Analyze users' spending behavior
-* Categorize expenses automatically
-* Recommend suitable credit cards
-* Improve cashback and reward benefits for users
-* Provide a simple and interactive dashboard
-
----
-
-## 🛠️ Technologies Used
-
-### Backend
-
-* Python
-* Java
-
-### Frontend
-* React - Vite
-
-### Database
-
-* Postgresql
-
-### Additional Libraries
-
-* Pandas
-* NumPy
-* Flask / Spring Boot *(if used)*
-
----
-
-## ⚙️ System Architecture
-
-```text
-User Spending Data
-        ↓
-Data Processing (Python)
-        ↓
-Recommendation Engine
-        ↓
-Backend Integration (Java)
-        ↓
-Frontend Dashboard
-        ↓
-Personalized Credit Card Suggestions
-```
+* "Show me my happiest moments from 2024"
+* "Find beach trips with friends"
+* "Show memories from Chennai last summer"
+* "Summarize my graduation memories"
 
 ---
 
 ## ✨ Features
 
-* 📊 Spending pattern analysis
-* 💳 Personalized credit card recommendations
-* 📈 Financial insights dashboard
-* 🔍 Expense categorization
-* ⚡ Fast and responsive UI
-* 🔐 Secure data handling
+### Core Features
+
+* User Registration & Authentication
+* Secure JWT-based Authorization
+* Image & Video Upload
+* Memory Collections
+* Tagging System
+* Personal Gallery Dashboard
+
+### AI Features
+
+* AI-generated Image Captions
+* Semantic Search using Embeddings
+* Intelligent Memory Retrieval
+* Memory Summarization
+* Conversational Memory Assistant (RAG)
+
+### Search Features
+
+* Natural Language Search
+* Metadata Filtering
+* Collection-based Search
+* Date-based Search
+* Similar Memory Discovery
 
 ---
 
-## 🧠 How It Works
+## 🏗️ System Architecture
 
-1. Users provide spending or transaction data.
-2. The system processes and categorizes expenses.
-3. Spending habits are analyzed using Python logic.
-4. The recommendation engine compares spending patterns with available credit card benefits.
-5. The frontend displays the best credit card suggestions for the user.
+```text
+Frontend (Next.js)
+        │
+        ▼
+Spring Boot Backend
+        │
+        ├── PostgreSQL
+        ├── AWS S3
+        ├── ChromaDB
+        │
+        ▼
+FastAPI AI Service
+        │
+        ├── CLIP Embeddings
+        ├── BLIP Captioning
+        ├── Whisper Transcription
+        └── RAG Pipeline
+```
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+
+### Backend
+
+* Java 21
+* Spring Boot
+* Spring Security
+* JWT Authentication
+* JPA / Hibernate
+
+### AI Service
+
+* Python
+* FastAPI
+* Transformers
+* LangChain
+* CLIP
+* BLIP
+* Whisper
+
+### Databases
+
+* PostgreSQL
+* ChromaDB
+
+### Storage
+
+* AWS S3
+
+### DevOps
+
+* Docker
+* GitHub Actions
 
 ---
 
 ## 📂 Project Structure
 
-```bash
-project-root/
+```text
+memory-lane/
 │
-├── frontend/          # User Interface
-├── backend/           # Java Backend
-├── python-engine/     # Recommendation Logic
-├── database/          # Database Files
-├── docs/              # Documentation
-└── README.md
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   ├── hooks/
+│   └── services/
+│
+├── backend/
+│   ├── src/main/java
+│   ├── controller/
+│   ├── service/
+│   ├── repository/
+│   ├── entity/
+│   └── security/
+│
+├── ai-service/
+│   ├── api/
+│   ├── models/
+│   ├── embeddings/
+│   ├── rag/
+│   └── utils/
+│
+├── docs/
+│
+└── docker-compose.yml
 ```
 
 ---
 
-## 🔮 Future Enhancements
+## 📌 MVP Roadmap
 
-* AI/ML-based recommendation improvements
-* Real-time bank API integration
-* Mobile application support
-* Personalized financial planning
-* Multi-bank credit card comparison
+### Phase 1
+
+* [x] Project Planning
+* [ ] User Authentication
+* [ ] PostgreSQL Integration
+* [ ] Memory Upload System
+* [ ] Gallery Dashboard
+
+### Phase 2
+
+* [ ] Image Captioning
+* [ ] Embedding Generation
+* [ ] ChromaDB Integration
+* [ ] Semantic Search
+
+### Phase 3
+
+* [ ] Conversational AI Assistant
+* [ ] Memory Summaries
+* [ ] Collections & Sharing
+* [ ] Deployment
 
 ---
 
-## 👨‍💻 Author
+## 🔐 Authentication
 
-**Balamurugan T**
-Final Year Student Project
+The system uses:
+
+* JWT Access Tokens
+* Refresh Tokens
+* Password Hashing using BCrypt
+* Role-Based Access Control
 
 ---
 
-## 📜 License
+## 🔍 Semantic Search Workflow
 
-This project is developed for educational and academic purposes.
+```text
+User Query
+     │
+     ▼
+Generate Embedding
+     │
+     ▼
+ChromaDB Similarity Search
+     │
+     ▼
+Retrieve Relevant Memories
+     │
+     ▼
+Return Ranked Results
+```
+
+---
+
+## 🤖 RAG Workflow
+
+```text
+User Question
+      │
+      ▼
+Query Embedding
+      │
+      ▼
+Retrieve Relevant Memories
+      │
+      ▼
+Build Context
+      │
+      ▼
+LLM Response Generation
+      │
+      ▼
+Answer User
+```
+
+---
+
+## 🚦 Getting Started
+
+### Clone Repository
+
+```bash
+git clone https://github.com/your-username/memory-lane.git
+cd memory-lane
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Backend
+
+```bash
+cd backend
+./mvnw spring-boot:run
+```
+
+### AI Service
+
+```bash
+cd ai-service
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+---
+
+## 📊 Future Enhancements
+
+* Mobile Application
+* Face Recognition
+* Voice-Based Search
+* Memory Timeline Visualization
+* Collaborative Albums
+* Smart Memory Recommendations
+* Multi-language Support
+
+---
+
+## 👨‍💻 Team
+
+Final Year Project
+
+**Memory Lane — Relive Your Memories Through AI**
+
+---
+
+## 📄 License
+
+This project is developed for educational and research purposes as part of a Final Year Engineering Project.
